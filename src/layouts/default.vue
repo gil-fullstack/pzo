@@ -5,7 +5,6 @@ import {useRouter} from "vue-router";
 import {useDisplay} from 'vuetify'
 import App from "../App.vue";
 
-
 const display = useDisplay();
 const router = useRouter();
 const isMobile = computed(() => display.smAndDown.value)
@@ -17,14 +16,13 @@ function toggleMobileMenu() {
 </script>
 
 <template>
-
-    <nav class="ferrari-menu">
+    <nav class="pocos-menu">
       <div class="menu-container">
         <router-link to="/" class="logo-link">
           <img
               :src="logo"
-              alt="Ferrari Logo"
-              class="ferrari-logo"
+              alt="Poços Zona Oeste Logo"
+              class="pocos-logo"
           />
         </router-link>
         <ul class="nav-links" :class="{ 'is-open': isMobileMenuOpen }">
@@ -40,7 +38,9 @@ function toggleMobileMenu() {
           <li @click="toggleMobileMenu">
             <router-link to="/contact">CONTATO</router-link>
           </li>
-
+          <li @click="toggleMobileMenu">
+            <router-link to="/loja">LOJA</router-link>
+          </li>
 <!--          <li v-if="logged || logged2" :key="count" @click="toggleMobileMenu">-->
 <!--            <router-link to="/admin">ADMIN</router-link>-->
 <!--          </li>-->
@@ -81,28 +81,25 @@ function toggleMobileMenu() {
 </template>
 
 <style lang="scss" scoped>
-$ferrari-red: #e70a19;
-$ferrari-yellow: #ffe600;
+$pocos-red: #b5ff5b;
+$pocos-yellow: #ffe600;
 $dark: #5a5a5a;
 $white: #fff;
 body {
   background-color: $white;
 }
-
-.ferrari-menu {
+.pocos-menu {
   width: 100%;
   background: $dark;
   box-shadow: 0 2px 18px -8px rgba(0, 0, 0, 0.14);
   position: relative;
   z-index: 100;
-
   .access-login {
     position: absolute;
     right: 4%;
     top: 14%;
     float: right;
   }
-
   .menu-container {
     max-width: 1300px;
     margin: 0 auto;
@@ -117,7 +114,7 @@ body {
     display: flex;
     align-items: center;
 
-    .ferrari-logo {
+    .pocos-logo {
       height: 48px;
       width: auto;
       margin-top: 2px;
@@ -143,8 +140,8 @@ body {
       transition: color 0.18s, border-bottom 0.18s;
 
       &:hover, &:focus {
-        color: $ferrari-red;
-        border-bottom: 2px solid $ferrari-red;
+        color: $pocos-red;
+        border-bottom: 2px solid $pocos-red;
       }
     }
   }
@@ -165,7 +162,7 @@ body {
 
       &:hover {
         background: rgba(255, 0, 0, 0.18);
-        color: $ferrari-red;
+        color: $pocos-red;
       }
 
       display: flex;
@@ -193,7 +190,7 @@ body {
 // --- Responsive Styles ---
 
 @media (max-width: 960px) {
-  .ferrari-menu {
+  .pocos-menu {
     .nav-links {
       display: none; // Hide navigation links
     }
@@ -234,10 +231,10 @@ body {
 }
 
 @media (max-width: 480px) {
-  .ferrari-menu .menu-container {
+  .pocos-menu .menu-container {
     padding: 0 16px;
   }
-  .logo-link .ferrari-logo {
+  .logo-link .pocos-logo {
     height: 40px;
   }
 }
