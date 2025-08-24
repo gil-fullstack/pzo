@@ -39,7 +39,7 @@ function toggleMobileMenu() {
             <router-link to="/contact">CONTATO</router-link>
           </li>
           <li @click="toggleMobileMenu">
-            <router-link to="/loja">LOJA</router-link>
+            <router-link to="/store">LOJA</router-link>
           </li>
 <!--          <li v-if="logged || logged2" :key="count" @click="toggleMobileMenu">-->
 <!--            <router-link to="/admin">ADMIN</router-link>-->
